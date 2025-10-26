@@ -1,21 +1,112 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>メロンハウス ヨーヨー部</title>
-  <link rel="stylesheet" href="style.css" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>メロンハウスヨーヨー部</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: sans-serif;
+      scroll-behavior: smooth;
+    }
+
+    /* ヘッダー */
+    header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      background-color: #fff;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px 16px;
+      z-index: 1000;
+    }
+
+    .menu-btn {
+      font-size: 24px;
+      background: none;
+      border: none;
+      cursor: pointer;
+    }
+
+    nav {
+      position: fixed;
+      top: 0;
+      right: -100%;
+      width: 70%;
+      height: 100%;
+      background-color: white;
+      box-shadow: -2px 0 8px rgba(0,0,0,0.2);
+      transition: right 0.3s;
+      padding-top: 60px;
+    }
+
+    nav.open {
+      right: 0;
+    }
+
+    nav a {
+      display: block;
+      padding: 16px;
+      text-decoration: none;
+      color: #333;
+      border-bottom: 1px solid #eee;
+    }
+
+    section {
+      padding: 80px 16px;
+    }
+
+  </style>
 </head>
 <body>
+
   <header>
-    <h1>🍈 メロン</h1>
-    <p>YO！</p>
+    <h1>メロンハウスヨーヨー部</h1>
+    <button class="menu-btn" id="menu-btn">☰</button>
   </header>
 
-  <main>
-    <p>ここにコンテンツが入ります。</p>
-  </main>
+  <nav id="nav">
+    <a href="#about">あばうと</a>
+    <a href="#test1">てすと1</a>
+    <a href="#contact">お問い合わせ</a>
+  </nav>
 
-  <script src="script.js"></script>
+  <section id="about">
+    <h2>部活動紹介</h2>
+    <p>メロンヨーヨー部はヨーヨーを愛する人たちの集まりです。</p>
+  </section>
+
+  <section id="test1">
+    <h2>test1_H2</h2>
+    <p>test1</p>
+  </section>
+  
+
+  <section id="contact">
+    <h2>お問い合わせ</h2>
+    <p>ご連絡はこちらから。</p>
+  </section>
+
+  <script>
+    const menuBtn = document.getElementById('menu-btn');
+    const nav = document.getElementById('nav');
+
+    menuBtn.addEventListener('click', () => {
+      nav.classList.toggle('open');
+    });
+
+    // メニューリンクをクリックしたら閉じる
+    document.querySelectorAll('nav a').forEach(link => {
+      link.addEventListener('click', () => {
+        nav.classList.remove('open');
+      });
+    });
+  </script>
+
 </body>
 </html>
