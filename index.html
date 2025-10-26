@@ -11,13 +11,12 @@
   <header>
     <h1>メロンハウスヨーヨー部</h1>
     <button class="menu-btn" id="menu-btn">☰</button>
+    <nav id="nav">
+      <a href="#about">あばうと</a>
+      <a href="#test1">てすと1</a>
+      <a href="#contact">お問い合わせ</a>
+    </nav>
   </header>
-
-  <nav id="nav">
-    <a href="#about">あばうと</a>
-    <a href="#test1">てすと1</a>
-    <a href="#contact">お問い合わせ</a>
-  </nav>
 
   <main>
     <section id="about">
@@ -40,23 +39,14 @@
     const menuBtn = document.getElementById('menu-btn');
     const nav = document.getElementById('nav');
 
-    // ハンバーガークリックで開閉
     menuBtn.addEventListener('click', () => {
       nav.classList.toggle('open');
     });
 
-    // メニューリンククリックで閉じる
     nav.querySelectorAll('a').forEach(link => {
       link.addEventListener('click', () => {
-        nav.classList.remove('open');
+        if (window.innerWidth < 768) nav.classList.remove('open');
       });
-    });
-
-    // メニュー外クリックで閉じる
-    document.addEventListener('click', (e) => {
-      if (!nav.contains(e.target) && !menuBtn.contains(e.target)) {
-        nav.classList.remove('open');
-      }
     });
   </script>
 
