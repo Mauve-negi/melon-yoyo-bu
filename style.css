@@ -96,6 +96,14 @@ section {
   padding: 60px 16px;
 }
 
+/* 埋め込みYouTubeのレスポンシブ化 */
+.responsive-iframe {
+  width: 100%;
+  max-width: 100%;  /* はみ出さない */
+  aspect-ratio: 16/9; /* 縦横比を維持 */
+  border: none;
+}
+
 /* スマホ用 */
 @media (max-width: 767px) {
   main {
