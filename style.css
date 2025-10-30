@@ -5,22 +5,22 @@ body {
   scroll-behavior: smooth;
 }
 
-/* ✅ 背景画像（右下に半透明で固定表示） */
+/* 背景画像 */
 body::after {
   content: "";
   position: fixed;
   bottom: 0;
   right: 0;
-  width: 25vw; /* 画面幅の1/4 */
+  width: 25vw;
   height: auto;
-  aspect-ratio: 1 / 1; /* 正方形っぽく保つ */
+  aspect-ratio: 1/1;
   background-image: url("picture/wallpaper.png");
   background-size: contain;
   background-repeat: no-repeat;
   background-position: bottom right;
-  opacity: 0.3; /* 透明度30% */
-  pointer-events: none; /* 背景クリックを無効化 */
-  z-index: -1; /* 最背面に配置 */
+  opacity: 0.3;
+  pointer-events: none;
+  z-index: -1;
 }
 
 /* ヘッダー */
@@ -30,7 +30,7 @@ header {
   left: 0;
   width: 100%;
   height: 60px;
-  background-color: #fff;
+  background-color: #b5e48c; /* メロン色 */
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -55,14 +55,12 @@ h1 {
   cursor: pointer;
   padding: 8px;
   line-height: 1;
-  position: fixed; /* 右上に固定 */
-  top: 10px;
-  right: 16px;
-  z-index: 1011; /* ヘッダーより前面 */
-  display: none; /* デフォルト非表示、スマホで表示 */
+  z-index: 1010;
+  display: block;
+  position: relative;
 }
 
-/* ナビ（共通） */
+/* ナビ */
 nav {
   display: flex;
   gap: 16px;
@@ -77,8 +75,8 @@ nav a {
 
 /* mainコンテンツ */
 main {
-  padding-top: 60px; /* ヘッダー分 */
-  margin-left: 25vw; /* PCで左余白 */
+  padding-top: 60px;
+  margin-left: 25vw; /* 左余白 */
   max-width: 70vw;
   box-sizing: border-box;
 }
@@ -90,7 +88,7 @@ section {
   padding: 60px 16px;
 }
 
-/* スマホ用スライドメニュー */
+/* スマホ用 */
 @media (max-width: 767px) {
   main {
     margin-left: 0;
@@ -124,11 +122,11 @@ section {
   }
 
   .menu-btn {
-    display: block; /* スマホで必ず表示 */
+    display: block;
   }
 }
 
-/* PC表示 */
+/* PCではボタン非表示 */
 @media (min-width: 768px) {
   .menu-btn {
     display: none;

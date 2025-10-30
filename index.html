@@ -10,11 +10,12 @@
 
   <header>
     <h1>メロンハウスヨーヨー部</h1>
-    <nav>
-      <a href="../index.html">TOP</a> |
-      <a href="pages/first.html">最初にやること</a> |
-      <a href="pages/play.html">実際に遊ぶ</a> |
-      <a href="pages/advanced.html">応用</a> |
+    <button class="menu-btn" id="menu-btn">☰</button>
+    <nav id="nav">
+      <a href="../index.html">TOP</a>
+      <a href="pages/first.html">最初にやること</a>
+      <a href="pages/play.html">実際に遊ぶ</a>
+      <a href="pages/advanced.html">応用</a>
       <a href="pages/help.html">困ったとき</a>
     </nav>
   </header>  
@@ -36,20 +37,6 @@
     </section>
   </main>
 
-  <script>
-    const menuBtn = document.getElementById('menu-btn');
-    const nav = document.getElementById('nav');
-
-    menuBtn.addEventListener('click', () => {
-      nav.classList.toggle('open');
-    });
-
-    nav.querySelectorAll('a').forEach(link => {
-      link.addEventListener('click', () => {
-        if (window.innerWidth < 768) nav.classList.remove('open');
-      });
-    });
-  </script>
-
+  <script src="script.js"></script>
 </body>
 </html>
