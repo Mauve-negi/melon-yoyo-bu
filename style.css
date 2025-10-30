@@ -5,6 +5,24 @@ body {
   scroll-behavior: smooth;
 }
 
+/* ✅ 背景画像（右下に半透明で固定表示） */
+body::after {
+  content: "";
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  width: 25vw; /* 画面幅の1/4 */
+  height: auto;
+  aspect-ratio: 1 / 1; /* 正方形っぽく保つ */
+  background-image: url("picture/wallpaper.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: bottom right;
+  opacity: 0.3; /* 透明度30% */
+  pointer-events: none; /* 背景クリックを無効化 */
+  z-index: -1; /* 最背面に配置 */
+}
+
 /* ヘッダー */
 header {
   position: fixed;
@@ -27,6 +45,11 @@ h1 {
   margin: 0;
   font-size: 1.2rem;
   white-space: nowrap;
+}
+
+.main-content {
+  margin-left: 25vw;  /* 画面幅の1/4を左余白に */
+  max-width: 60vw;    /* 残りの幅を制限して読みやすくする */
 }
 
 /* ハンバーガーボタン（スマホのみ） */
@@ -97,7 +120,7 @@ nav a {
     padding-top: 0;
   }
 }
- 
+
 /* mainコンテンツ */
 main {
   padding-top: 60px; /* ヘッダー分 */
