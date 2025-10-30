@@ -47,13 +47,7 @@ h1 {
   white-space: nowrap;
 }
 
-main {
-  padding-top: 60px; /* ヘッダー分の余白 */
-  margin-left: 25vw; /* 画面幅の1/4を左余白に */
-  max-width: 70vw;    /* 残りの幅を制限 */
-  box-sizing: border-box;
-}
-/* ハンバーガーボタン（スマホのみ） */
+/* ハンバーガーボタン（スマホ） */
 .menu-btn {
   font-size: 28px;
   background: none;
@@ -63,6 +57,9 @@ main {
   line-height: 1;
   z-index: 1010;
   display: block;
+  position: fixed;
+  top: 10px;
+  right: 16px;
 }
 
 /* ナビ（共通） */
@@ -78,8 +75,29 @@ nav a {
   padding: 8px 0;
 }
 
+/* mainコンテンツ */
+main {
+  padding-top: 60px; /* ヘッダー分 */
+  margin-left: 25vw; /* PCで左余白 */
+  max-width: 70vw;
+  box-sizing: border-box;
+}
+
+/* セクション */
+section {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 60px 16px;
+}
+
 /* スマホ用スライド */
 @media (max-width: 767px) {
+  main {
+    margin-left: 0;
+    max-width: 100vw;
+    padding: 10px;
+  }
+
   nav {
     position: absolute;
     top: 60px;
@@ -104,6 +122,10 @@ nav a {
     padding: 16px;
     border-bottom: 1px solid #eee;
   }
+
+  .menu-btn {
+    display: block;
+  }
 }
 
 /* PCではボタン非表示 */
@@ -120,15 +142,4 @@ nav a {
     background: none;
     padding-top: 0;
   }
-}
-
-/* mainコンテンツ */
-main {
-  padding-top: 60px; /* ヘッダー分 */
-}
-
-section {
-  max-width: 800px;
-  margin: 0 auto;
-  padding: 60px 16px;
 }
