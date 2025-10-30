@@ -47,7 +47,7 @@ h1 {
   white-space: nowrap;
 }
 
-/* ハンバーガーボタン（スマホ） */
+/* ハンバーガーボタン */
 .menu-btn {
   font-size: 28px;
   background: none;
@@ -55,11 +55,11 @@ h1 {
   cursor: pointer;
   padding: 8px;
   line-height: 1;
-  z-index: 1010;
-  display: block;
-  position: fixed;
+  position: fixed; /* 右上に固定 */
   top: 10px;
   right: 16px;
+  z-index: 1011; /* ヘッダーより前面 */
+  display: none; /* デフォルト非表示、スマホで表示 */
 }
 
 /* ナビ（共通） */
@@ -90,7 +90,7 @@ section {
   padding: 60px 16px;
 }
 
-/* スマホ用スライド */
+/* スマホ用スライドメニュー */
 @media (max-width: 767px) {
   main {
     margin-left: 0;
@@ -124,11 +124,11 @@ section {
   }
 
   .menu-btn {
-    display: block;
+    display: block; /* スマホで必ず表示 */
   }
 }
 
-/* PCではボタン非表示 */
+/* PC表示 */
 @media (min-width: 768px) {
   .menu-btn {
     display: none;
